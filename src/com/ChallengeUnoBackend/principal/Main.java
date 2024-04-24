@@ -10,9 +10,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Conversor conversor;
         int seleccion = 0;
-        double cifraDinero;
+        double cifraDinero = 0;
 
-        while (seleccion != 7){
+        while (seleccion != 7) {
 
             System.out.println("\nCONVERSOR DE DIVISAS");
             System.out.println("**************************************************");
@@ -21,10 +21,12 @@ public class Main {
             System.out.println("1.USD a COP\n2.COP a USD\n3.USD a ARS\n4.ARS a USD\n5.USD a BRL\n6.BRL a USD\n7.SALIR");
             seleccion = scan.nextInt();
 
-            System.out.println("\nCifra de dinero a convertir: ");
-            cifraDinero = scan.nextDouble();
+            if (seleccion != 7) {
+                System.out.println("\nCifra de dinero a convertir: ");
+                cifraDinero = scan.nextDouble();
+            }
 
-            switch (seleccion){
+            switch (seleccion) {
                 case 1:
                     conversor = new Conversor("USD", "COP", cifraDinero);
                     System.out.println(cifraDinero + " USD = " + conversor.convertir() + " COP");
@@ -59,3 +61,4 @@ public class Main {
         }
     }
 }
+
