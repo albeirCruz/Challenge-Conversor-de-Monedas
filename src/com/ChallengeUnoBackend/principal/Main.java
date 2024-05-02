@@ -28,29 +28,22 @@ public class Main {
 
             switch (seleccion) {
                 case 1:
-                    conversor = new Conversor("USD", "COP", cifraDinero);
-                    System.out.println(cifraDinero + " USD = " + conversor.convertir() + " COP");
+                    resultadoConvercion("USD", "COP", cifraDinero);
                     break;
                 case 2:
-                    conversor = new Conversor("COP", "USD", cifraDinero);
-                    System.out.println(cifraDinero + " COP = " + conversor.convertir() + " USD");
+                    resultadoConvercion("COP", "USD", cifraDinero);
                     break;
                 case 3:
-                    conversor = new Conversor("USD", "ARS", cifraDinero);
-                    System.out.println(cifraDinero + " USD = " + conversor.convertir() + " ARS");
+                    resultadoConvercion("USD", "ARS", cifraDinero);
                     break;
                 case 4:
-                    conversor = new Conversor("ARS", "USD", cifraDinero);
-                    System.out.println(cifraDinero + " ARS = " + conversor.convertir() + " USD");
+                    resultadoConvercion("ARS", "USD", cifraDinero);
                     break;
                 case 5:
-                    conversor = new Conversor("USD", "BRL", cifraDinero);
-                    System.out.println(cifraDinero + " USD = " + conversor.convertir() + " BRL");
+                    resultadoConvercion("USD", "BRL", cifraDinero);
                     break;
                 case 6:
-                    conversor = new Conversor("BRL", "USD", cifraDinero);
-                    System.out.println(cifraDinero + " BRL = " + conversor.convertir() + " USD");
-                    break;
+                    resultadoConvercion("BRL", "USD", cifraDinero);
                 case 7:
                     System.out.println("Bye");
                     break;
@@ -59,6 +52,13 @@ public class Main {
                     break;
             }
         }
+    }
+
+    public static void resultadoConvercion(String monedaBase, String monedaDeCambio, double cifraDinero){
+        Conversor conversor;
+
+        conversor = new Conversor(monedaBase, monedaDeCambio, cifraDinero);
+        System.out.println(cifraDinero + " " + monedaBase + " = " + conversor.convertir() + " " + monedaDeCambio);
     }
 }
 
